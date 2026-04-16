@@ -3,7 +3,7 @@
  * Tests every attack vector an attacker might try.
  */
 
-const BASE_URL = "https://www.shyft.lol";
+const BASE_URL = "https://baddie.stream";
 const FAKE_WALLET = "BxEsw8dYEaZkGmEKLTCrzhnJT6k9h7wwoaQEmyiXxKEd"; // attacker wallet
 
 async function attack(name: string, body: any, expectedBlock: boolean) {
@@ -34,7 +34,7 @@ async function attackWithCorrectOrigin(name: string, body: any, expectedBlock: b
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Origin": "https://www.shyft.lol", // correct origin
+        "Origin": "https://baddie.stream", // correct origin
       },
       body: JSON.stringify(body),
     });
@@ -138,7 +138,7 @@ async function main() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Origin": "https://www.shyft.lol",
+        "Origin": "https://baddie.stream",
       },
       body: JSON.stringify({
         action: "likePost",

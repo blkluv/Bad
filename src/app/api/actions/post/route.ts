@@ -189,7 +189,7 @@ export async function GET(request: NextRequest) {
     const likes = Number(postResult.data.likes || 0);
     const comments = Number(postResult.data.commentCount || 0);
 
-    const baseUrl = `https://www.shyft.lol/api/actions/post`;
+    const baseUrl = `https://baddie.stream/api/actions/post`;
 
     const response = {
       type: "action" as const,

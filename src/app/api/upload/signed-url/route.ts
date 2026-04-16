@@ -13,7 +13,7 @@ const pinata = new PinataSDK({
 });
 
 const ALLOWED_ORIGINS = new Set([
-  "https://www.shyft.lol",
+  "https://baddie.stream",
   "https://shyft.lol",
   "http://localhost:3000",
   "http://localhost:3001",

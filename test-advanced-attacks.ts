@@ -16,7 +16,7 @@
  * Run: npx tsx test-advanced-attacks.ts
  */
 
-const PROD_URL = "https://www.shyft.lol";
+const PROD_URL = "https://baddie.stream";
 const SOLANA_RPC = "https://api.mainnet-beta.solana.com";
 
 // Known real accounts on-chain
@@ -43,8 +43,8 @@ async function buildTx(action: string, params: any, walletAddress: string, extra
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Origin": "https://www.shyft.lol",
-      "Referer": "https://www.shyft.lol/",
+      "Origin": "https://baddie.stream",
+      "Referer": "https://baddie.stream/",
       ...extraHeaders,
     },
     body: JSON.stringify({ action, params, walletAddress }),
@@ -127,7 +127,7 @@ async function testAdminEscalation() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Origin": "https://www.shyft.lol",
+        "Origin": "https://baddie.stream",
       },
       body: JSON.stringify({ action: variant, params: {}, walletAddress: ATTACKER_WALLET }),
     });
@@ -147,7 +147,7 @@ async function testDeadSponsorTxRoute() {
 
   // Check if the route responds at all
   const getRes = await fetch(`${PROD_URL}/api/sponsor-tx`, {
-    headers: { "Origin": "https://www.shyft.lol" },
+    headers: { "Origin": "https://baddie.stream" },
   });
   const getData = await getRes.json();
   
@@ -160,7 +160,7 @@ async function testDeadSponsorTxRoute() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Origin": "https://www.shyft.lol",
+        "Origin": "https://baddie.stream",
       },
       body: JSON.stringify({
         transaction: Buffer.from([0, 1, 2, 3]).toString("base64"),  // garbage tx
@@ -306,7 +306,7 @@ async function testRpcProxyAbuse() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Origin": "https://www.shyft.lol",
+      "Origin": "https://baddie.stream",
     },
     body: JSON.stringify({
       jsonrpc: "2.0",
@@ -325,7 +325,7 @@ async function testRpcProxyAbuse() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Origin": "https://www.shyft.lol",
+      "Origin": "https://baddie.stream",
     },
     body: JSON.stringify({
       jsonrpc: "2.0",
@@ -359,7 +359,7 @@ async function testUploadAbuse() {
   // Try with correct origin but no file
   const noFileRes = await fetch(`${PROD_URL}/api/upload`, {
     method: "POST",
-    headers: { "Origin": "https://www.shyft.lol" },
+    headers: { "Origin": "https://baddie.stream" },
     body: new FormData(),
   });
   const noFileData = await noFileRes.json();
@@ -373,7 +373,7 @@ async function testUploadAbuse() {
   evilForm.append("file", evilBlob, "evil.sh");
   const evilRes = await fetch(`${PROD_URL}/api/upload`, {
     method: "POST",
-    headers: { "Origin": "https://www.shyft.lol" },
+    headers: { "Origin": "https://baddie.stream" },
     body: evilForm,
   });
   const evilData = await evilRes.json();
@@ -520,7 +520,7 @@ async function testNoUserSignerRequired() {
 async function main() {
   console.log("╔══════════════════════════════════════════════════╗");
   console.log("║  SHYFT ADVANCED ATTACK TESTING                  ║");
-  console.log("║  Target: https://www.shyft.lol (production)     ║");
+  console.log("║  Target: https://baddie.stream (production)     ║");
   console.log("║  12 attack vectors — real requests to prod API  ║");
   console.log("╚══════════════════════════════════════════════════╝");
 

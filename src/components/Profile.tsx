@@ -1181,7 +1181,7 @@ function ProfilePostCard({
   const handleShare = async () => {
     const authorName = profileUsername ? `@${profileUsername}` : post.author.slice(0, 8);
     const preview = post.content.length > 80 ? post.content.slice(0, 80) + "..." : post.content;
-    const shareUrl = `https://www.shyft.lol`;
+    const shareUrl = `https://baddie.stream`;
     const shareText = `"${preview}" — ${authorName} on Shyft\n\n${shareUrl}`;
     if (navigator.share) {
       try {

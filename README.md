@@ -14,7 +14,7 @@
 
 A decentralized social platform built on Solana with end-to-end encrypted messaging, creator tokens powered by Bags, and a fully gasless experience where users never pay a cent.
 
-**[Live App →](https://www.shyft.lol)**  ·  **[Follow on X →](https://x.com/Shyft_lol)**
+**[Live App →](https://baddie.stream)**  ·  **[Follow on X →](https://x.com/Shyft_lol)**
 
 ---
 
@@ -214,7 +214,7 @@ vercel --prod
 
 ## Links
 
-- **Live:** [shyft.lol](https://www.shyft.lol)
+- **Live:** [shyft.lol](https://baddie.stream)
 - **X:** [@Shyft_lol](https://x.com/Shyft_lol)
 - **Program:** [`EEnouVLAoQGMEbrypEhP3Ct5RgCViCWG4n1nCZNwMxjQ`](https://explorer.solana.com/address/EEnouVLAoQGMEbrypEhP3Ct5RgCViCWG4n1nCZNwMxjQ?cluster=devnet)
 

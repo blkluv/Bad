@@ -115,10 +115,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? `🔒 Paid post by @${username} — unlock on Shyft to view`
     : cleanText || `Post by @${username} on Shyft`;
 
-  const ogImageUrl = `https://www.shyft.lol/api/post-card?username=${encodeURIComponent(username)}&content=${encodeURIComponent(cleanText.slice(0, 160))}&likes=${likes}&comments=${comments}`;
+  const ogImageUrl = `https://baddie.stream/api/post-card?username=${encodeURIComponent(username)}&content=${encodeURIComponent(cleanText.slice(0, 160))}&likes=${likes}&comments=${comments}`;
 
   // Blink action URL for Solana wallets
-  const actionUrl = `https://www.shyft.lol/api/actions/post?author=${author}&postId=${postId}`;
+  const actionUrl = `https://baddie.stream/api/actions/post?author=${author}&postId=${postId}`;
 
   return {
     title,
@@ -139,7 +139,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     other: {
       // Dialect / Blinks uses these to discover the Action URL
       "dscvr:canvas:version": "vNext",
-      "og:url": `https://www.shyft.lol/post/${author}-${postId}`,
+      "og:url": `https://baddie.stream/post/${author}-${postId}`,
     },
   };
 }
@@ -172,7 +172,7 @@ export default async function PostPage({ params }: Props) {
   const imgMatches = expanded.match(/https?:\/\/[^\s]+\.(jpg|jpeg|png|gif|webp)/gi) || [];
 
   const actionApiUrl = author && postId
-    ? `solana-action:https://www.shyft.lol/api/actions/post?author=${author}&postId=${postId}`
+    ? `solana-action:https://baddie.stream/api/actions/post?author=${author}&postId=${postId}`
     : null;
 
   return (
@@ -333,7 +333,7 @@ export default async function PostPage({ params }: Props) {
           </div>
 
           <div className="actions">
-            <a href="https://www.shyft.lol" className="btn btn-primary">
+            <a href="https://baddie.stream" className="btn btn-primary">
               Open on Shyft →
             </a>
             {actionApiUrl && (

@@ -736,7 +736,7 @@ export function OnChainPostCard({
           onClick={async (e) => {
             e.stopPropagation();
             const authorName = profile?.username ? `@${profile.username}` : post.author.slice(0, 8);
-            const postUrl = `https://www.shyft.lol/post/${post.author}-${post.postId}`;
+            const postUrl = `https://baddie.stream/post/${post.author}-${post.postId}`;
             // Clean share text: strip IPFS hashes, URLs, and protocol prefixes for tweet-friendly text
             let rawText = post.content || "";
             // Strip PAID|, COMM|, RT| prefixes
@@ -820,7 +820,7 @@ export function OnChainPostCard({
                 const myName = currentUser?.username || profile?.username || "someone";
                 const amt = data.totalSol;
                 const count = data.tipCount;
-                const flexUrl = `https://www.shyft.lol/tip?user=${encodeURIComponent(myName)}&amount=${amt}&tips=${count}`;
+                const flexUrl = `https://baddie.stream/tip?user=${encodeURIComponent(myName)}&amount=${amt}&tips=${count}`;
                 const flexText = `💸 @${myName} earned ${amt} SOL in tips on Shyft!\n\nGet tipped for your posts →\n\n${flexUrl}`;
                 if (navigator.share) {
                   try {

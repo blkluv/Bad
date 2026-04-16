@@ -31,7 +31,7 @@ function err(message: string, status = 400) {
 
 // Allowed origins — only shyft.lol can call this API
 const ALLOWED_ORIGINS = new Set([
-  "https://www.shyft.lol",
+  "https://baddie.stream",
   "https://shyft.lol",
   "http://localhost:3000",
   "http://localhost:3001",

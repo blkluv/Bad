@@ -573,7 +573,7 @@ Solana Mainnet              Solana Mainnet
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <a href="https://www.shyft.lol" className="text-xs text-[#2563EB] hover:underline flex items-center gap-1">Live App <ExternalLink className="w-3 h-3" /></a>
+                <a href="https://baddie.stream" className="text-xs text-[#2563EB] hover:underline flex items-center gap-1">Live App <ExternalLink className="w-3 h-3" /></a>
                 <a href="https://x.com/Shyft_lol" target="_blank" rel="noopener noreferrer" className="text-xs text-[#64748B] hover:text-[#1A1A2E] transition-colors">𝕏 Twitter</a>
                 <a href="https://github.com/chandm1213/Shyft.lol" target="_blank" rel="noopener noreferrer" className="text-xs text-[#64748B] hover:text-[#1A1A2E] transition-colors">GitHub</a>
               </div>
